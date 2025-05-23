@@ -237,7 +237,7 @@ def generate_sticker_labels(df, line_loc_header_width, line_loc_box1_width,
             middle_table = Table(unified_table_data[3:6], colWidths=col_widths_middle, rowHeights=row_heights[3:6])
             bottom_table = Table([unified_table_data[6]], colWidths=col_widths_bottom, rowHeights=[row_heights[6]])
 
-            # Apply styles
+            # Apply styles - UPDATED WITH CENTERED HEADERS
             top_style = [
                 ('FONTNAME', (0, 0), (-1, -1), 'Helvetica'),
                 ('FONTNAME', (0, 0), (0, -1), 'Helvetica-Bold'),
@@ -246,7 +246,7 @@ def generate_sticker_labels(df, line_loc_header_width, line_loc_box1_width,
                 ('FONTSIZE', (1, 0), (-1, 0), 10),
                 ('FONTSIZE', (1, 1), (-1, 1), 11),
                 ('FONTSIZE', (1, 2), (1, 2), 8),
-                ('ALIGN', (0, 0), (0, -1), 'LEFT'),
+                ('ALIGN', (0, 0), (0, -1), 'CENTER'),  # Changed from 'LEFT' to 'CENTER'
                 ('ALIGN', (1, 0), (1, -1), 'LEFT'),
                 ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
                 ('GRID', (0, 0), (-1, -1), 1, colors.black),
@@ -259,8 +259,10 @@ def generate_sticker_labels(df, line_loc_header_width, line_loc_box1_width,
             middle_style = [
                 ('FONTNAME', (0, 0), (-1, -1), 'Helvetica'),
                 ('FONTNAME', (0, 0), (0, -1), 'Helvetica-Bold'),
-                ('FONTSIZE', (0, 0), (-1, -1), 11),
-                ('ALIGN', (0, 0), (0, -1), 'LEFT'),
+                ('FONTSIZE', (0, 0), (0, 0), 9),  # Decreased font size for "PART PER VEH" from 11 to 9
+                ('FONTSIZE', (0, 1), (0, 2), 11),  # Keep other headers at size 11
+                ('FONTSIZE', (1, 0), (-1, -1), 11),
+                ('ALIGN', (0, 0), (0, -1), 'CENTER'),  # Changed from 'LEFT' to 'CENTER'
                 ('ALIGN', (1, 0), (1, -1), 'LEFT'),
                 ('ALIGN', (2, 0), (2, -1), 'CENTER'),
                 ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
@@ -276,7 +278,8 @@ def generate_sticker_labels(df, line_loc_header_width, line_loc_box1_width,
                 ('FONTNAME', (0, 0), (-1, -1), 'Helvetica'),
                 ('FONTNAME', (0, 0), (0, 0), 'Helvetica-Bold'),
                 ('FONTSIZE', (0, 0), (-1, -1), 9),
-                ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
+                ('ALIGN', (0, 0), (0, 0), 'CENTER'),  # Changed from 'LEFT' to 'CENTER' for header
+                ('ALIGN', (1, 0), (-1, -1), 'LEFT'),
                 ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
                 ('GRID', (0, 0), (-1, -1), 1, colors.black),
                 ('LEFTPADDING', (0, 0), (-1, -1), 2),
