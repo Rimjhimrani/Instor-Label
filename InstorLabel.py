@@ -329,6 +329,15 @@ def main():
     )
     
     st.title("🏷️ INSTOR LABEL GENERATOR")
+
+    # Add the developer credit in smaller italic text on the left
+    st.markdown(
+        "<div style='text-align: left; font-size: 14px; font-style: italic;'>"
+        "Designed and Developed by Agilomatrix"
+        "</div>",
+        unsafe_allow_html=True
+    )
+
     st.markdown("---")
     
     # Sidebar for configuration
