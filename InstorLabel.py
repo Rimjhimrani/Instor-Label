@@ -532,7 +532,7 @@ def generate_sticker_labels(df, line_loc_header_width, line_loc_box1_width,
 
 def main():
     """Main Streamlit application"""
-    st.set_page_config(page_title="Sticker Label Generator", layout="wide")
+    st.set_page_config(page_title="Instor Label Generator", layout="wide")
     
     st.title("🏷️ Instor Label Generator")
     
@@ -623,7 +623,7 @@ def main():
             # Generate labels button
             st.subheader("🏷️ Generate Labels")
             
-            if st.button("Generate Sticker Labels", type="primary", use_container_width=True):
+            if st.button("Generate Instor Labels", type="primary", use_container_width=True):
                 with st.spinner("Generating sticker labels... Please wait."):
                     pdf_data, filename = generate_sticker_labels(
                         df, 
@@ -636,7 +636,7 @@ def main():
                     )
                     
                     if pdf_data:
-                        st.success("✅ Sticker labels generated successfully!")
+                        st.success("✅ Instor labels generated successfully!")
                         
                         # Download button
                         st.download_button(
@@ -648,10 +648,10 @@ def main():
                         )
                         
                         # Display some statistics
-                        st.info(f"📊 Generated {len(df)} sticker labels")
+                        st.info(f"📊 Generated {len(df)} instor labels")
                         
                     else:
-                        st.error("❌ Failed to generate sticker labels. Please check your data and try again.")
+                        st.error("❌ Failed to generate instor labels. Please check your data and try again.")
         
         except Exception as e:
             st.error(f"❌ Error reading file: {str(e)}")
@@ -680,7 +680,7 @@ def main():
         
         st.subheader("🔧 Features")
         st.markdown("""
-        - 🏷️ **Professional sticker labels** with bordered layout
+        - 🏷️ **Professional instor labels** with bordered layout
         - 📱 **QR codes** containing all product information
         - 🖼️ **Logo support** for branding
         - 📐 **Customizable layout** with adjustable column widths
